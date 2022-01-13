@@ -7,8 +7,17 @@ public class Plate {
         this.food = food;
     }
 
-    public void decreaseFood(int appetite) {
-        food -= appetite;
+    public boolean decreaseFood(int appetite) {
+        int tmpFood = food - appetite;
+        if (tmpFood>=0) {
+            food = tmpFood;
+            return true;
+        } else
+            return false;
+    }
+
+    public void increaseFood(int food) {
+        this.food += food;
     }
 
     public void info() {
